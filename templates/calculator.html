@@ -25,6 +25,7 @@
   </head>
 <body>
     <h1>Calculator</h1>
+    <form action="http://127.0.0.1:5000/" method="POST"></form>
     <div class = "container">
         <div class="header">Calculator</div>
             <input type="text" id="result"/>
@@ -49,13 +50,13 @@
             <input type="button" value="8" onclick="dis('8')" class="global"/> 
             <input type="button" value="9" onclick="dis('9')" class="global"/> 
             <input type="button" value="+" onclick="dis('+')" class="global"/> 
-         </class>
+         </div>
          <div class = "fourth-row">
             <input type="button" value="." onclick="dis('.')" class="global"/>
             <input type="button" value="0" onclick="dis('0')" class="global"/>
             <input type="button" value="*" onclick="dis('*')" class="global"/>
             <!-- solve function call function solve to evaluate value -->
-            <input type="button" value="=" onclick="solve()" class=" green white-text big top-margin"/>
+            <input type="submit" value="=" onclick="solve()" class=" green white-text big top-margin"/>
 
          </div>
          </div>
