@@ -1,47 +1,63 @@
 <html>
   <head>
+    <script>
+      //function that display value
+      function dis(val)
+      {
+          document.getElementById("result").value+=val
+      }
+        
+      //function that evaluates the digit and return result
+      function solve()
+      {
+          let x = document.getElementById("result").value
+          let y = eval(x)
+          document.getElementById("result").value = y
+      }
+        
+      //function that clear the display
+      function clr()
+      {
+          document.getElementById("result").value = ""
+      }
+    </script>
     <link rel="stylesheet" href='/static/style.css' />
   </head>
 <body>
     <h1>Calculator</h1>
-    <div class="container">
-      <div class="header">Calculator</div>
-      <input type="text" class="result">
-      <div class="first-row">
-        <input type="button" name="" value="&radic;" class="global">
-        <input type="button" name="" value="(" class="global">
-        <input type="button" name="" value=")" class="global">
-        <input type="button" name="" value="%" class="global">
-      </div>
-      <div class="second-row">
-        <input type="button" name="" value="7" class="global">
-        <input type="button" name="" value="8" class="global">
-        <input type="button" name="" value="9" class="global">
-        <input type="button" name="" value="/" class="global">
-      </div>
-      <div class="third-row">
-        <input type="button" name="" value="4" class="global">
-        <input type="button" name="" value="5" class="global">
-        <input type="button" name="" value="6" class="global">
-        <input type="button" name="" value="X" class="global">
-      </div>
-      <div class="fourth-row">
-        <input type="button" name="" value="1" class="global">
-        <input type="button" name="" value="2" class="global">
-        <input type="button" name="" value="3" class="global">
-        <input type="button" name="" value="-" class="global">
-      </div>
-      <div class="conflict">
-        <div class="left">
-          <input type="button" name="" value="0" class=" big">
-          <input type="button" name="" value="." class=" small">
-          <input type="button" name="" value="Del" class=" red small white-text top-margin">
-          <input type="button" name="" value="=" class=" green white-text big top-margin">
-        </div>
-        <div class="right">
-          <input type="button" name="" value="+" class="global grey plus">
-        </div>
-      </div>
-    </div>
+    <div class = "container">
+        <div class="header">Calculator</div>
+            <input type="text" id="result"/>
+            <!-- clr() function will call clr to clear all value -->
+            <input type="button" value="c" onclick="clr()"/>
+         <div class="first-row">
+            <!-- create button and assign value to each button -->
+            <!-- dis("1") will call function dis to display value -->
+          <input type="button" value="1" onclick="dis('1')" class="global"/>
+          <input type="button" value="2" onclick="dis('2')" class="global"/>
+          <input type="button" value="3" onclick="dis('3')" class="global"/>
+          <input type="button" value="/" onclick="dis('/')" class="global"/>
+         </div>
+         <div class="second-row">
+            <input type="button" value="4" onclick="dis('4')" class="global"/> 
+            <input type="button" value="5" onclick="dis('5')" class="global"/> 
+            <input type="button" value="6" onclick="dis('6')" class="global"/> 
+            <input type="button" value="-" onclick="dis('-')" class="global"/> 
+         </div>
+         <div class = "third-row">
+            <input type="button" value="7" onclick="dis('7')" class="global"/> 
+            <input type="button" value="8" onclick="dis('8')" class="global"/> 
+            <input type="button" value="9" onclick="dis('9')" class="global"/> 
+            <input type="button" value="+" onclick="dis('+')" class="global"/> 
+         </class>
+         <div class = "fourth-row">
+            <input type="button" value="." onclick="dis('.')" class="global"/>
+            <input type="button" value="0" onclick="dis('0')" class="global"/>
+            <input type="button" value="*" onclick="dis('*')" class="global"/>
+            <!-- solve function call function solve to evaluate value -->
+            <input type="button" value="=" onclick="solve()" class=" green white-text big top-margin"/>
+
+         </div>
+         </div>
 </body>
 </html>
