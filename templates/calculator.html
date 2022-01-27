@@ -2,6 +2,7 @@
   <head>
     <script>
       //function that display value
+
       function dis(val)
       {
           document.getElementById("result").value+=val
@@ -14,6 +15,18 @@
           let y = eval(x)
           document.getElementById("result").value = y
       }
+
+      var list = document.getElementById("list");
+      //function that adds the numbers to a list
+      function createList()
+      {
+        var firstname = document.getElementById('result').value;
+        var node=document.createElement("LI");
+        var textnode=document.createTextNode(firstname);
+        node.appendChild(textnode);
+        document.getElementById("list").appendChild(node);
+        document.getElementById("result").value = ""
+      }
         
       //function that clear the display
       function clr()
@@ -25,9 +38,12 @@
   </head>
 <body>
     <h1>Calculator</h1>
-    <form action="http://127.0.0.1:5000/" method="POST"></form>
+    <div id="resultDiv"></div>
+    <form action="http://127.0.0.1:5000/" method="get"></form>
     <div class = "container">
         <div class="header">Calculator</div>
+        <ol id="list"> 
+        </ol>
             <input type="text" id="result"/>
             <!-- clr() function will call clr to clear all value -->
             <input type="button" value="c" onclick="clr()"/>
@@ -56,7 +72,8 @@
             <input type="button" value="0" onclick="dis('0')" class="global"/>
             <input type="button" value="*" onclick="dis('*')" class="global"/>
             <!-- solve function call function solve to evaluate value -->
-            <input type="submit" value="=" onclick="solve()" class=" green white-text big top-margin"/>
+            <input type="button" value="Add to list" onclick="createList()" class=" green white-text big top-margin"/>
+            <input type="button" value="Calculate" onclick="calculate()" class=" green white-text big top-margin"/>
 
          </div>
          </div>
