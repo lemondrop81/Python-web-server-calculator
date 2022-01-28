@@ -1,3 +1,5 @@
+import app
+
 class MyMath():
     """Contains math functions"""
 
@@ -21,17 +23,14 @@ class MyMath():
         
         return avg
 
+    def print(self, nums):
+        print(f"Standard deviation of nums: {math.standardDeviation(nums)}, the average of nums: {math.avg(nums)}")
+
 number = 0
 nums = []
 
-while number != -1:
-    number = int(input('Enter -1 to exit. Enter a number '))
-    if number == -1:
-        break
-    nums.append(number)
 
 math = MyMath(1)
 
-print(f"Standard deviation of nums: {math.standardDeviation(nums)}, the average of nums: {math.avg(nums)}")
 
 
