@@ -1,5 +1,6 @@
 from statistics import mode
 from flask import Flask, request, render_template
+from pyparsing import nums
 import MyMath
 
 app = Flask(__name__)
@@ -38,7 +39,8 @@ def calc():
         if '0' in request.form:
             MyMath.nums.append(0)
             return render_template("calculator.html", ButtonPressed = 0)
-
+        if 'calculate' in request.form:
+            return render_template("calculator.html", ButtonPressed = MyMath.MyMath.print(MyMath.nums))
 
     return render_template("calculator.html", ButtonPressed = ButtonPressed)
 
