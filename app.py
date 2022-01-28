@@ -27,8 +27,6 @@ def calc():
         if '0' in request.form:
             return render_template("calculator.html", ButtonPressed = 0)
 
-        return render_template("calculator.html", ButtonPressed = ButtonPressed)
-        # I think you want to increment, that case ButtonPressed will be plus 1.
     return render_template("calculator.html", ButtonPressed = ButtonPressed)
 
 if __name__ == '__main__':
