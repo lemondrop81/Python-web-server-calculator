@@ -3,9 +3,10 @@
     <link rel="stylesheet" href='/static/style.css' />
   </head>
 <body>
+  <h2>Button Pressed: {{ButtonPressed}}</h2>
     <h1>Calculator</h1>
     <div id="resultDiv"></div>
-    <form action="http://127.0.0.1:5000/" method="get">
+    <form method="post" enctype="multipart/form-data">
     <div class = "container">
         <div class="header">Calculator</div>
         <ol id="list"> 
@@ -14,23 +15,22 @@
             <!-- clr() function will call clr to clear all value -->
          <div class="first-row">
             <!-- create button and assign value to each button -->
-            <!-- dis("1") will call function dis to display value -->
-          <input type="button" value="1" onclick="dis('1')" class="global"/>
-          <input type="button" value="2" onclick="dis('2')" class="global"/>
-          <input type="button" value="3" onclick="dis('3')" class="global"/>
+          <input type="submit" name="1" value="1" class="global"/>
+          <input type="submit" name="2" value="2" class="global"/>
+          <input type="submit" value="3" class="global"/>
          </div>
          <div class="second-row">
-            <input type="button" value="4" onclick="dis('4')" class="global"/> 
-            <input type="button" value="5" onclick="dis('5')" class="global"/> 
-            <input type="button" value="6" onclick="dis('6')" class="global"/> 
+            <input type="submit" name="4" value="4" class="global"/> 
+            <input type="submit" name="5" value="5" class="global"/> 
+            <input type="submit" name="6" value="6" class="global"/> 
          </div>
          <div class = "third-row">
-            <input type="button" value="7" onclick="dis('7')" class="global"/> 
-            <input type="button" value="8" onclick="dis('8')" class="global"/> 
-            <input type="submit" value="9" onclick="dis('9')" class="global"/> 
+            <input type="submit" name="7" value="7" class="global"/> 
+            <input type="submit" name="8" value="8" class="global"/> 
+            <input type="submit" name="9" value="9" class="global"/> 
          </div>
          <div class = "fourth-row">
-            <input type="button" value="0" onclick="dis('0')" class="global"/>
+            <input type="submit" name="0" value="0" onclick="dis('0')" class="global"/>
             <!-- solve function call function solve to evaluate value -->
             <input type="button" value="Add to list" onclick="createList()" class=" green white-text big top-margin"/>
             <input type="button" value="Calculate" onclick="calculate()" class=" green white-text big top-margin"/>
