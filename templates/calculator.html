@@ -1,86 +1,42 @@
 <html>
   <head>
-    <script>
-      //function that display value
-
-      function dis(val)
-      {
-          document.getElementById("result").value+=val
-      }
-        
-      //function that evaluates the digit and return result
-      function solve()
-      {
-          let x = document.getElementById("result").value
-          let y = eval(x)
-          document.getElementById("result").value = y
-      }
-
-      //function that adds the numbers to a list
-      function createList()
-      {
-        var firstname = document.getElementById('result').value;
-        var node=document.createElement("LI");
-        var textnode=document.createTextNode(firstname);
-        node.appendChild(textnode);
-        document.getElementById("list").appendChild(node);
-        document.getElementById("result").value = ""
-      }
-
-      //function that calculates the values
-      function calculate()
-      {
-        
-      }
-        
-      //function that clear the display
-      function clr()
-      {
-          document.getElementById("result").value = ""
-      }
-    </script>
     <link rel="stylesheet" href='/static/style.css' />
   </head>
 <body>
     <h1>Calculator</h1>
     <div id="resultDiv"></div>
-    <form action="http://127.0.0.1:5000/" method="get"></form>
+    <form action="http://127.0.0.1:5000/" method="get">
     <div class = "container">
         <div class="header">Calculator</div>
         <ol id="list"> 
         </ol>
             <input type="text" id="result"/>
             <!-- clr() function will call clr to clear all value -->
-            <input type="button" value="c" onclick="clr()"/>
          <div class="first-row">
             <!-- create button and assign value to each button -->
             <!-- dis("1") will call function dis to display value -->
           <input type="button" value="1" onclick="dis('1')" class="global"/>
           <input type="button" value="2" onclick="dis('2')" class="global"/>
           <input type="button" value="3" onclick="dis('3')" class="global"/>
-          <input type="button" value="/" onclick="dis('/')" class="global"/>
          </div>
          <div class="second-row">
             <input type="button" value="4" onclick="dis('4')" class="global"/> 
             <input type="button" value="5" onclick="dis('5')" class="global"/> 
             <input type="button" value="6" onclick="dis('6')" class="global"/> 
-            <input type="button" value="-" onclick="dis('-')" class="global"/> 
          </div>
          <div class = "third-row">
             <input type="button" value="7" onclick="dis('7')" class="global"/> 
             <input type="button" value="8" onclick="dis('8')" class="global"/> 
-            <input type="button" value="9" onclick="dis('9')" class="global"/> 
-            <input type="button" value="+" onclick="dis('+')" class="global"/> 
+            <input type="submit" value="9" onclick="dis('9')" class="global"/> 
          </div>
          <div class = "fourth-row">
-            <input type="button" value="." onclick="dis('.')" class="global"/>
             <input type="button" value="0" onclick="dis('0')" class="global"/>
-            <input type="button" value="*" onclick="dis('*')" class="global"/>
             <!-- solve function call function solve to evaluate value -->
             <input type="button" value="Add to list" onclick="createList()" class=" green white-text big top-margin"/>
             <input type="button" value="Calculate" onclick="calculate()" class=" green white-text big top-margin"/>
 
          </div>
          </div>
+    </form>
 </body>
 </html>
