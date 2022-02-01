@@ -14,6 +14,11 @@ class MyMath():
             suma += ((x - sum(number)/len(number))**2)
         return (suma/(len(number)-1)) **0.5
 
+    def largest(self, number):
+        """Returns the largest number in the list."""
+        largest = max(number)
+        return largest
+
     def avg(self, number):
         """Returns the average of a list of numbers."""
         sum = 0

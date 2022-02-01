@@ -1,6 +1,4 @@
-from statistics import mode
 from flask import Flask, request, render_template
-from pyparsing import nums
 import MyMath
 
 app = Flask(__name__)
@@ -40,7 +38,9 @@ def calc():
             MyMath.nums.append(0)
             return render_template("calculator.html", ButtonPressed = 0)
         if 'calculate' in request.form:
-            return render_template("calculator.html", ButtonPressed = MyMath.MyMath.print(MyMath.nums))
+            math = MyMath.MyMath(1)
+            test = "Standard deviation of nums: " + str(round(math.avg(MyMath.nums), 2))+ " the average of nums: " + str(round(math.standardDeviation(MyMath.nums), 4)) + " the largest of nums: " + str(math.largest(MyMath.nums))
+            return render_template("calculator.html", ButtonPressed = test)
 
     return render_template("calculator.html", ButtonPressed = ButtonPressed)
 

@@ -3,15 +3,12 @@
     <link rel="stylesheet" href='/static/style.css' />
   </head>
 <body>
-  <h2>Button Pressed: {{ButtonPressed}}</h2>
+  <h2>{{ButtonPressed}}</h2>
     <h1>Calculator</h1>
     <div id="resultDiv"></div>
     <form method="post" enctype="multipart/form-data">
     <div class = "container">
         <div class="header">Calculator</div>
-        <ol id="list"> 
-        </ol>
-            <input type="text" id="result"/>
             <!-- clr() function will call clr to clear all value -->
          <div class="first-row">
             <!-- create button and assign value to each button -->
@@ -32,7 +29,6 @@
          <div class = "fourth-row">
             <input type="submit" name="0" value="0" class="global"/>
             <!-- solve function call function solve to evaluate value -->
-            <input type="button" value="Add to list"  class=" green white-text big top-margin"/>
             <input type="submit" name="calculate" value="Calculate"  class=" green white-text big top-margin"/>
 
          </div>
