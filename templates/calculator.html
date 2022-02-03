@@ -3,9 +3,9 @@
     <link rel="stylesheet" href='/static/style.css' />
   </head>
 <body>
-  <h2>{{ButtonPressed}}</h2>
     <h1>Calculator</h1>
     <div id="resultDiv"></div>
+    <h2>{{ButtonPressed}}</h2>
     <form method="post" enctype="multipart/form-data">
     <div class = "container">
         <div class="header">Calculator</div>
@@ -30,8 +30,9 @@
             <input type="submit" name="0" value="0" class="global"/>
             <!-- solve function call function solve to evaluate value -->
             <input type="submit" name="calculate" value="Calculate"  class=" green white-text big top-margin"/>
-
+            <input type="submit" name="clear" value="clear"  class=" green white-text big top-margin"/>
          </div>
+
          </div>
     </form>
 </body>
