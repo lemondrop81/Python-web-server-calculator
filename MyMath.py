@@ -1,3 +1,9 @@
+"""
+    Assignment WebApp
+    Date: Febuary 2 2022
+    Description: A simple MyMath program
+"""
+
 import app
 
 
@@ -8,11 +14,11 @@ class MyMath():
         """Class constructor"""
         self.number = number
 
-    def standardDeviation(self, number):
+    def standard_deviation(self, number):
         """Returns the standard deviation of a list of numbers."""
         suma = 0
-        for x in number:
-            suma += ((x - sum(number) / len(number)) ** 2)
+        for counter in number:
+            suma += ((counter - sum(number) / len(number)) ** 2)
         return (suma/(len(number) - 1)) ** 0.5
 
     def largest(self, number):
@@ -22,22 +28,19 @@ class MyMath():
 
     def avg(self, number):
         """Returns the average of a list of numbers."""
-        sum = 0
+        suma = 0
         for num in number:
-            sum += num
-        avg = sum / len(number)
+            suma += num
+        avg = suma / len(number)
         return avg
 
     def print(self, nums):
-        print(f"Standard deviation of nums: " +
-              "{math.standardDeviation(nums)}, " + 
-              "the average of nums: {math.avg(nums)}")
+        """Prints the results."""
+        print(f"Standard deviation of nums: {math.standard_deviation(nums)}, " +
+              f"the average of nums: {math.avg(nums)}")
 
-number = 0
-nums = []
+NUMBER = 0
+NUMS = []
 
 
 math = MyMath(1)
-
-
-
